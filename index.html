@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NT.personal website</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="shortcut icon" href="images/nt.png">
+	<script type="text/javascript" src = "js/sea.js"></script>
+	<script type="text/javascript">
+		seajs.use('index.js',function(mod){
+			mod.init();
+		})
+	</script>
+</head> 
+<body>
+	<div id="body ">
+		<!-- animation screen-->
+		<div class="full-screen" id="screen">
+			<div class="w-n"></div>
+			<div class="e-n"></div>
+			<div class="e-s"></div>
+			<div class="w-s"></div>
+			<h3></h3>
+			<h4 class="topcn">
+				<p class="welcome"></p>
+				<p class="topcn-person"><span>个</span><span>人</span><span>网</span><span>站</span></p>
+			</h4>  
+			<hr id="crosswise" />
+			<hr id="vertical-bar">
+			<hr id="crosswise-b" />
+			<hr id="vertical-bar-r">
+		</div>
+		<!-- layer -->
+		<!-- <div id="layer"></div> 留用-->
+		<!-- navigation -->
+		<div class="doc " id="doc">
+			<div id="sildeshow">
+				<!-- <div class="note">双击屏幕偷个懒！</div> -->
+				<div class="my-personal">
+					<h2>NT.Wang</h2>
+					<p>Personal Website</p>
+				</div>
+				<div id="navigation" class="clearFix">
+					<div class="response">
+						<div class="nav home-page"><a href="javascript:;" style="color: #d0d6d9;">首页</a></div>
+						<div class="nav"><a href="javascript:;">案例展示</a></div>
+						<div class="nav synopsis"><a href="javascript:;">项目展示</a></div>
+						<div class="nav"><a href="javascript:;">个人简介</a></div>
+						<div class="nav other"><a href="javascript:;">联系方式</a></div>
+					</div>
+					<div class="pattern"></div>
+					<div id="move"></div>
+				</div>
+				<div class="silde-massage">
+					<ul id="dictum">
+						<li class="">I am a slow walker, but I never walk backwards.</li>
+						<li class="">When all else is lost the future still remains.</li>
+						<li class="">Never underestimate your power to change yourself!</li>
+					</ul>
+				</div>
+				<!--weather-->
+				<div class="t1 clearFix" id="t1">
+					<div class="city fl">北京</div>
+			<!-- <div class="weather fl"><img src=""></div>
+			<div class="temperature fl">18℃ ~ 2℃ <span></span></div>
+			<div class="air fl">空气指数：<span>重度污染</span></div>
+			<div class="more">展开更多>></div> -->
+		</div>
+		<div id="detail-weather">
+				<!-- <ul class="clearFix">
+				<li>今天</li>
+				<li><img src="images/weather.png" alt="" /></li>
+				<li>2-18℃</li>
+				<li>北风</li>
+				<li>3级</li>
+				<li><span>188 中度污染</span></li>
+			</ul>
+			<ul class="clearFix">
+				<li>今天</li>
+				<li><img src="images/weather.png" alt="" /></li>
+				<li>2-18℃</li>
+				<li>北风</li>
+				<li>3级</li>
+				<li><span>188 中度污染</span></li>
+			</ul>
+			<ul class="clearFix">
+				<li>今天</li>
+				<li><img src="images/weather.png" alt="" /></li>
+				<li>2-18℃</li>
+				<li>北风</li>
+				<li>3级</li>
+				<li><span>188 中度污染</span></li>
+			</ul> -->
+		</div>
+		<div class="b1">
+			<span class="s1"></span>
+			<span class="s2"></span>
+			<span class="s3"></span>
+		</div>
+	</div>
+	<!--content-->
+	<!--案例展示-->
+	<div class="title-bar" id="title-bar">案例展示</div>
+	<div class="display-area" id="displayarea">		
+		<div class="show" id="show">
+			<div class="demo1 view">
+				<div class="explain">
+					<div>
+						<a href="case/3D-index.html" target="_Blank">
+							<img src="images/show1.png" alt="" />
+						</a>
+					</div>
+				</div>
+				<div class="describe">
+					<h3>3D旋转</h3>
+					<p>CSS3</p>
+				</div>
+			</div>
+			<div class="demo2 view">
+				<div class="explain">
+					<div>
+						<a href="case/boom.html" target="_Blank">
+							<img src="images/show2.png" alt="" />	</a>
+						</div>
+					</div>
+					<div class="describe">
+						<h3>飞</h3>
+						<p>JavaScript/CSS3</p>
+					</div>
+				</div>
+				<div class="demo3 view">
+					<div class="explain">
+						<div>
+							<a href="case/through.html" target="_Blank">
+								<img src="images/show3.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="describe">
+						<h3>翻转</h3>
+						<p>JavaScript/CSS3</p>
+					</div>
+				</div>
+				<div class="demo4 view">
+					<div class="explain">
+						<div>
+							<a href="case/banner.html" target="_Blank">
+								<img src="images/show4.png" alt="" />	
+							</a>
+						</div>
+					</div>
+					<div class="describe">
+						<h3>SVG-Map</h3>
+						<p>JavaScript/CSS3</p>
+					</div>
+				</div>
+				<div class="demo5 view">
+					<div class="explain">
+						<div>
+							<a href="case/seamless.html" target="_Blank">
+								<img src="images/show5.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="describe">
+						<h3>无缝切换</h3>
+						<p>jQuery/CSS</p>
+					</div>
+				</div>
+				<div class="demo6 view">
+					<div class="explain">
+						<div>
+							<a href="case/show.html" target="_Blank">
+								<img src="images/show6.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="describe">
+						<h3>展示</h3>
+						<p>JavaScript/CSS3</p>
+					</div>
+				</div>
+				<div class="demo7 view">
+					<div class="explain">
+						<div>
+							<a href="case/chip.html" target="_Blank">
+								<img src="images/show7.png" alt="" />
+							</a>
+							
+						</div>
+					</div>
+					<div class="describe">
+						<h3>碎片</h3>
+						<p>JavaScript/CSS3</p>
+					</div>
+				</div>
+				<div class="demo8 view">
+					<div class="explain">
+						<div>
+							<a href="case/periodic-table.html" target="_Blank">
+								<img src="images/show8.png" alt="" />
+							</a>
+						</div>
+					</div>
+					<div class="describe">
+						<h3>元素周期表（收藏）</h3>
+						<p>JavaScript/CSS3</p>
+					</div>
+				</div>
+			</div>
+			<div id="exchange">
+				<img src="images/bg-small.png" alt="点击变化" />
+			</div>
+		</div>
+		<div class="title-bar2" id="title-bar2">项目展示</div>
+		<div class="works-show" id="workshow">
+			<div class="works-show-layer"></div>
+			<div class="works-show-layer2"></div>
+			<!-- exhibit 项目-->
+			<div id="picture" class="wrapper">
+				<div id="prev"></div>
+				<div id="next"></div>
+				<ul>
+					<li class="p1"><a href="project/project1/index.html" ><img src="images/practice1.png" width="100"></a></li>
+					<li class="p1"><a href="project/project2/index.html" ><img src="images/practice2.png" width="200"></a></li>
+					<li class="p1"><a href="project/project3/index.html" ><img src="images/practice3.png" width="300"></a></li>
+					<li class="p1"><a href="project/project4/index.html" ><img src="images/practice4.png" width="400"></a></li>
+					<li class="p1"><a href="project/project5/index.html" ><img src="images/practice5.png" width="500"></a></li>
+					<li class="p1"><a href="project/project6/index.html" ><img src="images/practice6.png" width="400"></a></li>
+					<li class="p1"><a href="javascript:;" ><img src="images/practice7.png" width="300"></a></li>
+					<li class="p1"><a href="javascript:;" ><img src="images/practice8.png" width="200"></a></li>
+					<li class="p1"><a href="javascript:;" ><img src="images/practice9.png" width="100"></a></li>
+				</ul>
+			</div>
+		</div>
+		<!--contact me-->
+		<div class = "title-bar3" id="title-bar3">联系方式</div>
+		<div class="contact-me pos" id="contact">
+			<div class="detail">
+				<ul>
+					<li>
+						<img src="images/icons/1.png" />
+
+					</li>
+					<li><img src="images/icons/2.png" /></li>
+					<li><img src="images/icons/3.png" /></li>
+					<li><img src="images/icons/4.png" /></li>
+					<li><img src="images/icons/5.png" /></li>
+					<li><img src="images/icons/6.png" /></li>
+					<li><img src="images/icons/7.png" /></li>
+					<li><img src="images/icons/8.png" /></li>
+					<li><img src="images/icons/9.png" /></li>
+				</ul>
+			</div>
+			<div class="massage">
+				<h3 class="massage-title">联络我</h3>
+				<span></span>
+				<ul class="clearFix">
+					<li>Name：NT.Wang</li>
+					<li>Tel：13512345678</li>
+					<li>Email：shenghui_wang@sina.com</li>
+				</ul>
+			</div>
+		</div>
+		<!--callback-->
+		<div class="toolbar" id="toolbar">
+			<a href="javascript:;" class="toolbar-item toolbar-item-weixin">
+				<span class="toolbar-layer"></span>
+			</a>
+			<a href="javascript:;" class="toolbar-item toolbar-item-feedback"></a>
+			<a href="javascript:;" class="toolbar-item toolbar-item-app">
+				<span class="toolbar-layer"></span>
+			</a>
+			<a href="javascript:;" id="top" class="toolbar-item toolbar-item-top"></a>
+		</div>
+		<div class="percent" id="percent">
+			<span class="hint">碍事就扔在角落里吧！</span>
+			<canvas id="percent-canvas" width="70" height="70">
+				<span>您的浏览器不支持canvas，请更换浏览器</span>
+			</canvas>
+		</div>
+		<!-- footer -->
+		<div class="footer"><i>END！</i></div>
+	</div>
+</div>
+</body>
+</html>

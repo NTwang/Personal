@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品展示</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.box {
+		width: 1000px;
+		height:600px;
+		border:1px solid red;
+		margin: 50px auto;
+		position: relative;
+		overflow: hidden;
+	}
+/*左边缩略图*/
+	.box .catalogue{
+		width: 220px;
+		height:600px;
+		margin: 20px 5px;
+		float: left;
+	}
+	.box .catalogue li{
+		border:2px solid #fff;
+		width: 210px;
+		height: 135px;			
+	}
+	.box .catalogue .on{
+		width: 220px;
+		height: 145px;
+		margin-left: -5px;
+		margin-top: -5px;
+		-webkit-transition: 1s all ease;
+		-moz-transition: 1s all ease;
+		-ms-transition: 1s all ease;
+		-o-transition: 1s all ease;
+		transition: 1s all ease;
+	}
+	.box .catalogue img{
+		width: 100%;
+		height: 100%;
+	}
+/*右边展示区*/
+	.box .show{
+		width: 700px;
+		height: 700px;
+		float: left;
+		margin: 40px 30px;
+		position: relative;
+	}
+	.box .show li{
+		width: 700px;
+		height: 500px;
+		position: absolute;
+		left: 0;
+		top: 0;	
+	}
+	.box .show img{
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+
+		-webkit-transform-origin: center center;
+		-moz-transform-origin: center center;
+		-ms-transform-origin: center center;
+		-o-transform-origin: center center;
+		transform-origin: center center;
+		-webkit-transition: 1s all ease;
+		-moz-transition: 1s all ease;
+		-ms-transition: 1s all ease;
+		-o-transition: 1s all ease;
+		transition: 1s all ease;
+		
+	}
+	.box .show .picture1{
+		bottom: 0;
+		left: 0;	
+
+		-webkit-transform: rotateX(-180deg) scale(1,-1);
+		-moz-transform: rotateX(-180deg) scale(1,-1);
+		-ms-transform: rotateX(-180deg) scale(1,-1);
+		-o-transform: rotateX(-180deg) scale(1,-1);
+		transform: rotateX(-180deg) scale(1,-1);
+	}
+	.box .show .picture2{
+		width: 0;
+		height: 0;			
+	}
+	.box .show .picture3 {
+		left: -700px;
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	.box .show .picture4 {
+		right: -700px;
+		-webkit-transform: rotateX(180deg)  scale(-1,1); 
+		-ms-transform: rotateX(180deg) scale(-1,1);
+		-o-transform: rotateX(180deg) scale(-1,1);
+		transform: rotateX(180deg) scale(-1,1);
+	}
+</style>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded',function(){
+				var oC = document.querySelector('.catalogue');
+				var oS = document.querySelector('.show')
+				var aM1 = oC.querySelectorAll('img');
+				var aM2 = oS.querySelectorAll('img');
+				//左边缩略
+				for (var i = 0; i < aM1.length; i++) {
+					aM1[i].onmouseover = function(){
+						for (var i = 0; i < aM1.length; i++) {
+							aM1[i].removeAttribute('class');
+						};
+						this.className = 'on';
+					};
+					aM1[i].onmouseout = function(){
+						this.removeAttribute('class');
+					};
+				};
+				//右边展示区
+				var bReady = false;
+				for (var i = 0; i < aM1.length; i++) {
+					(function(index){
+						aM1[i].onclick = function(){
+							if (bReady)return;
+							bReady = true;
+							for (var i = 0; i < aM2.length; i++) {
+							aM2[i].removeAttribute('style'); //清除所以行间样式
+						};
+						aM2[index].style.opacity = 1;
+						aM2[index].style.width = 700+'px';
+						aM2[index].style.height = 500+'px';
+						aM2[index].style.left = 0;
+						aM2[index].style.top = 0;
+						aM2[index].style.zIndex = index+1;
+						aM2[index].style.transform = 'rotate(0deg) scale(1,1)';
+
+						var timer = setTimeout(function(){
+							bReady = false;
+							if (!bReady) {
+								clearTimeout(timer);
+							};
+						},1000);
+					};				
+				})(i);	
+			};
+		},false)
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul class="catalogue">
+			<li><img src="images/01.jpg"></li>
+			<li><img src="images/02.jpg"></li>
+			<li><img src="images/03.jpg"></li>
+			<li><img src="images/04.jpg"></li>
+		</ul>
+		<ul class="show">
+			<li ><img src="images/01.jpg" class="picture1" style="opacity: 1"></li>
+			<li ><img src="images/02.jpg" class="picture2"></li>
+			<li ><img src="images/03.jpg" class="picture3"></li>
+			<li ><img src="images/04.jpg" class="picture4"></li>
+		</ul>
+	</div>
+<!--=======================================
+	‖	←	◆		◆	← ◆◇◇◇◆  ←   ‖
+	‖	    ◇◇	◇		  ◇		  ‖
+	‖		◇	◇	◇	2016  ◇	      ‖   
+	‖		◇	  ◇◇		  ◇		  ‖	
+	‖	→	◆	    ◆	→	  ◆      →	  ‖
+	======================================= -->
+</body>
+</html>

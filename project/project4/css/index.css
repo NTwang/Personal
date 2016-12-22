@@ -1,0 +1,375 @@
+@charset "utf-8";
+/*总局控宽*/
+body{font-size: 12px;color: #787878;font-family: 'Microsoft YaHei'; }
+.wraper{ width: 1344px; margin: 0 auto;}
+.wraper2{ width: 975px; margin: 0 auto;}
+a:hover{color: pink}
+
+/*top*/
+.top2{ background: url(../images/2.jpg) repeat-x;
+	               text-align: center;
+	               line-height: 40px;
+	                position: relative;}
+.top2 a{ color: #fff; 
+         border-right: 1px solid #74472d; 
+         border-left: 1px solid #231006;
+         padding:0 17px;}
+.top2 a:hover{color:pink;}
+.top2 .a{ border-left: none; }
+.top2 .b{ border-right: none; }
+.top3{ position: relative; }
+.top2 img{ position: absolute;right: 192px;top: 8px; }
+.top3 img{float: left; margin-right: 10px;}
+.top3 div{ position: absolute;left: 629px; top: 460px; }
+ body .con{ position: fixed; right: 50px;top: 50%; }
+ /*在线客服电话*/
+ .online { width:975px; height: 102px; position: relative;}
+ .online .ph{ padding-top: 40px; position: relative;}
+ .online .qq{ position: absolute;right:15px; top: 54px; }
+ .online .qq a{ float: left; margin-right: 13px;}
+ /*三幅图*/
+ .three { margin:15px 0 15px 0;}
+ .three a{ float: left; margin-right: 15px;}
+ /*content*/
+ /*场馆介绍*/
+ #sp{ border-right: none; }
+ .con1 .top { margin-top: 20px;
+ 	          border-bottom: 1px #dbdbdb solid; 
+ 	          height: 52px; 
+ 	          margin-bottom: 16px;
+ 	          width: 960px;}
+ .con1 .top img{ padding-top: 1px;}
+ .con1 .city{ margin-top: 24px; }
+ .con1 .top a{ border-right: 3px solid #ba9bba; 
+ 	           margin-right: 10px; 
+ 	           padding-right: 10px;  }
+.con2{ width: 310px; height: 500px; position: relative;}
+.con2 img{position: relative;}
+.con2 b{ position: absolute; 
+	     top: 50%; 
+	     height: 62px;
+	     width: 28px;
+	     color: #fff;
+	     text-align: center;
+	     line-height:62px 
+	      }
+.con2 i{ position: absolute; left: 0;top: 0 ;
+         width: 100%;
+         height: 100%;
+         background:black;
+         opacity: 0.5;
+         filter: ( opacity:50);
+     }
+.con2 strong{ position: relative; }
+.con2 .prev{ left: 0; } 
+.con2 .next{right: 0;}
+.con1{ overflow: hidden; } 
+.con3 .n1,.n2{ width: 308px;height: 236px;
+	           border:1px solid #dbdbdb;
+	           margin-bottom: 20px; position: relative; }
+.con4 .n3,.n4{ width: 308px;height: 236px;
+	           border:1px solid #dbdbdb;
+	           margin-bottom: 20px; position: relative; }
+.con3,.con4{ margin-left: 15px; }
+.con3 .n1 img{ position: absolute;
+                   left: 4px;top: 4px; }
+.con3 .n2 img{ position: absolute;
+                   left: 4px;top: 4px; }
+.con4 .n3 img{ position: absolute;
+                   left: 4px;top: 4px; }
+.con4 .n4 img{ position: absolute;
+                   left: 4px;top: 4px; }
+.n1 p{ position: absolute;
+                 bottom: 12px;
+                 left: 7px; }
+.n2 p{ position: absolute;
+                 bottom: 12px;
+                 left: 7px; }
+.n3 p{ position: absolute;
+                 bottom: 12px;
+                 left: 7px; }
+.n4 p{ position: absolute;
+                 bottom: 12px;
+                 left: 7px; }
+/*外景介绍*/
+.con5 .top{ border-bottom:1px solid #dbdbdb; 
+	        height: 52px; width: 960px; margin-bottom: 15px;}
+.con5 .top .city{ margin-top:24px; }
+.con5 .top a{ border-right: 3px solid #ba9bba; 
+	          margin-left: 10px;
+	          padding-right: 10px; }
+.con5 .top img{ margin-top: 1px; }
+.con5 .con6 { position: relative;}
+.con5 .lt{ background:url(../images/arr_r.gif) no-repeat; 
+		    width: 31px; height: 61px;
+		    position: absolute;
+		    left: 14px; top: 212px;
+		    opacity: 0.5;
+		    filter:(opacity:50);
+		}
+.con5 .rt{ background:url(../images/arr_l.gif) no-repeat; 
+		   width: 31px; height: 61px;
+		   position: absolute;
+	       right: 14px; top: 212px;
+	       opacity: 0.5;
+	       filter:(opacity:50);
+	   }
+.con7 .n5,.n6{ border:1px solid #e5e5e5;
+               width: 308px;height:236px;
+               margin-bottom: 20px;
+               margin-left: 15px; }	       
+.con8 .n7,.n8{ border:1px solid #e5e5e5;
+               width: 308px;height:236px; 
+               margin-bottom: 20px;
+               margin-left: 15px; }
+.con7 img{ margin-top: 4px; margin-left: 4px; }	
+.con8 img{ margin-top: 4px; margin-left: 4px; }	
+.con5 p{ margin: 13px 0 0 7px; }
+/*客片欣赏*/
+.con9 .top{ 
+			height: 52px;
+	        width: 960px;
+            border-bottom: 1px solid #dbdbdb ; 
+          }
+.con9 .city{ margin-top: 24px; }          
+.con9 .city a{ 
+			    border-right: 3px solid #ba9bba;
+			    margin-left: 10px;
+			    padding-right: 10px;   
+			    }
+.con9 .top img { 
+           margin-top: 1px;
+            }
+.con10 { margin-top: 20px; }
+.con10 li{ 
+        width: 227px;
+        height: 394px;
+        border:1px solid #dbdbdb;
+        margin-right: 14px;}
+.con10 li img { margin: 6px 0 0 6px; }
+.con10 li p{ margin:7px 0 0 9px; }
+/*服务报价*/
+.offer .top{
+	        margin-top: 25px;
+	        border-bottom: 1px solid #bbbbbb;
+	        height: 52px;
+	        width: 960px;
+	        margin-bottom: 20px;
+	       } 
+.offer .top .more{ margin-right: 10px;margin-top: 24px; }
+.offer .top img{ margin-top: 1px; }
+.offer .price{ 
+	            width: 308px;
+	            height: 236px;
+          		border:1px solid #bbbbbb; }
+.offer .price img{ 
+                margin:4px 0px 15px 4px;
+                }
+.offer span{ 
+             font-weight: bold;
+             color: #ba1945;
+             margin-right: 10px; }
+.offer h3{ 
+	 		color: #3c2112; 
+			font-size: 16px; }
+.offer .inform{ 
+	margin-right: 80px;
+	font-family: '黑体';
+	font-weight: bold;
+	} 
+.offer .infor{
+	         line-height: 24px;
+	         color: #3c2112;
+	         position: relative;
+	         margin-top: 16px;
+	          }
+.offer .infor span{ 
+    position: absolute;
+    right: -70px;
+    bottom: -25px;
+ }
+.offer .price2{
+	width: 308px;
+	height: 236px;
+	border: 1px solid #bbbbbb;
+	margin-top: 20px;
+	margin-right: 15px;
+}
+.offer .price2 img{ 
+                margin:4px 0px 15px 4px;
+/*积分商城*/
+                }
+.integral .top{
+    margin-top: 32px;
+    height: 29px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #bbbbbb;
+}
+.integral  .itg2{
+    margin-left: 397px;
+}
+.integral .itg3{
+	margin-left: 163px;
+}
+.box .box2 {
+	width: 480px;
+	height: 286px;
+	overflow: hidden;
+}
+.box .box2 li{
+	width: 148px;
+	height: 133px;
+	border:1px solid #bbb;
+	border-bottom: 2px solid #bbb;
+	text-align: center;
+	margin-right: 10px;
+	margin-bottom: 13px;
+}
+.box .box2  img{
+	margin-left: 4px;
+}
+.microb{
+
+}
+.box .mb{
+	margin-left: 10px;
+
+}
+.box .news{
+	margin-left: 10px;
+	margin-right:20px;
+}
+.box .news1{
+	background: url(../images/6.png) no-repeat 0 15px;
+	width: 220px;
+	height: 30px;
+	line-height: 30px;
+}
+.box .news1 a{
+	margin-left: 5px;
+	color: #7878a2;
+}
+/*友情链接*/
+.friend .top7 {
+    margin-top: 50px;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 15px;
+    width: 960px;
+    height: 28px
+} 
+.friend .fd{
+	margin-bottom: 20px;
+	border-bottom: #bbb;
+}
+.friend .fd a{
+	margin-right: 27px;
+	color: #83471d;
+}
+/*footer*/
+.wraper3{
+	width: 1344px;
+	background-color: #eee;
+	border-top: 1px solid #bbb;
+	
+}
+.wraper4{
+	width: 975px; margin: 0 auto;
+	position:relative;
+	background: #eee url(../images/7.png) no-repeat 566px 0;
+}
+.homepage{
+	margin-right: 20px;
+}
+.homepage h5{
+	margin-top: 22px;
+	padding-bottom: 12px;
+	border-bottom: 1px #705c51 solid;
+	width: 118px;
+}
+.homepage a{
+	color: #787878;
+}
+.homepage p{
+	height: 24px;
+	line-height: 24px;
+}
+.box4{
+	width: 337px;
+	height: 175px;
+	position: absolute;
+	right: 16px;
+	top: -17px;
+}
+.box4 h3{
+	margin:33px 0 52px 72px;
+}
+.box4 p{
+	margin-left: 72px;
+}
+.box4 .address{
+	color: #9a6735;
+	margin-top: 10px;
+	margin-left: 72px;
+}
+.box4 .bgq{
+	position: absolute;
+	left: 10px;
+	top: 21px;
+}
+.box4 .bgb{
+	position: absolute;
+	left: 5px;
+	top: 99px;
+}
+.box4 .footq1{
+	position: absolute;
+	left: 71px;
+	top:68px;
+}
+.box4 .footq2{
+	position: absolute;
+	left: 98px;
+	top:68px;
+}
+.box4 .footq3{
+	position: absolute;
+	left:124px;
+	top:68px;
+}
+.box4 .footq4{
+	position: absolute;
+	left:150px;
+	top:68px;
+}
+.box4 .footq5{
+	position: absolute;
+	left:124px;
+	top:68px;
+}
+.last{
+	text-align: center;
+	height: 122px;
+	width: 1344px;
+	background: #3c2112;
+	line-height: 24px
+}
+.last .last1{
+	padding-top: 10px;
+}
+.last a{
+	border-right: 1px solid #fff;
+	margin-left: 3px;
+	padding-right: 3px;
+}
+    
+
+
+  
+
+
+
+
+
+
+
+

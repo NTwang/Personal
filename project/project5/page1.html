@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-family:"Microsoft YaHei";
+	}
+	a{
+		text-decoration: none;
+	}
+	img{
+		vertical-align:top;
+	}
+	input,textarea,select{
+		outline: none;
+	}
+	:root{
+		font-size: 100px;
+	};
+	body{
+		font-size: 0.11rem;
+	}
+	a{
+		color: #999;
+	}
+	.clearFix:after{ 
+		content:''; 
+		display:block; 
+		clear:both;
+	}
+	/*header*/
+	header{
+		height: 0.5rem;
+		display: flex;
+		background: #eeeeee;
+		border-top: 0.01rem solid #c5c5c5;
+		box-sizing: border-box;
+	}
+	header div:nth-child(1){
+		width: 0.69rem;
+		height: 100%;
+		background-size: contain;
+	}
+	header div:nth-child(2){
+		flex: 1;
+		height: 100%;
+		text-align: center;
+	}
+	header .header-3{
+		width: 0.6rem;
+		height: 100%;
+	}
+	header .back{
+		width: 0.63rem;
+		height: 0.31rem;
+		margin: 0.07rem 0 0 0.1rem;
+	}
+	header .logo{
+		width: 0.74rem;
+		height: 0.2rem;
+		margin-top: 0.12rem;
+	}
+	header .class{
+		width: 0.51rem;
+		height: 0.31rem;
+		margin-top: 0.07rem;
+		position: relative;
+	}
+	/*nav*/
+	nav li{
+		width: 25%;
+		height: 0.405rem;
+		border-right: 0.01rem solid #dcdcdc;
+		border-bottom:0.01rem solid #dcdcdc;
+		box-sizing: border-box;
+		line-height: 0.405rem;
+		text-align: center;
+		font-size: 0.11rem;
+		float: left;
+		color: #999999;
+	}
+	nav li:nth-child(1){
+		color: #d51942;
+
+	}
+	/*section*/
+	section .s1{
+		width: 100%;
+		height: 0.9rem;
+		border-bottom: 0.01rem solid #dcdcdc;
+	}
+	section a{
+		display: flex;
+		color: black;
+		margin-top: 0.1rem;
+		margin-left: 0.1rem;
+		font-size: 0.13rem;
+	}
+	section a div:nth-child(1){
+		width: 1.19rem;
+		height: 0.79rem;
+		border:0.01rem solid #eee;
+	}
+	section img{
+		width:1.12rem;
+		height: 0.72rem;
+		margin: 0.035rem;
+	}
+	section a div:nth-child(2){
+		flex: 1;
+		margin-left: 0.14rem;
+	}
+	section .detail p:nth-child(1){
+		width: 1.5rem;
+	}
+	section .detail p:nth-child(2){
+		margin-top: 0.07rem;
+		margin-bottom: 0.06rem;
+	}
+	section .detail p:nth-child(2){
+		font-size: 0.08rem;
+		color: #999999;
+	}
+	section .detail p:nth-child(3){
+		font-size: 0.08rem;
+		color: #999999;
+	
+	}
+	section .detail p:nth-child(4){
+		font-size: 0.10rem;
+		color: #fff;
+		background :#ee8800;
+		border-radius: 3px;
+		width:0.4rem; 
+		text-align: center;
+		line-height: 0.15rem;
+		display: none;
+	}
+	section .sp{
+		color: #d51938;
+	}
+	section .detail .old {
+		margin-left: 0.08rem;
+		text-decoration:line-through;
+	}
+	section .detail b{
+		font-size: 0.15rem;
+	}
+	section .s2 p:nth-child(3){
+		display: none;
+	}
+	section .s2 p:nth-child(4){
+		display: block;
+	}
+	/*footer*/
+	footer  div{
+		margin-top: 0.1rem;
+		margin-left: 0.15rem;
+	}
+	footer img{
+		margin-right: 0.18rem;
+	}
+	footer img:nth-child(1){
+
+		width: 0.12rem;
+		height: 0.21rem;
+	}
+	footer img:nth-child(2){
+
+		width: 0.12rem;
+		height: 0.21rem;
+	}
+	footer img:nth-child(3){
+
+		width: 0.2rem;
+		height: 0.26rem;
+	}
+	footer img:nth-child(4){
+
+		width: 0.22rem;
+		height: 0.27rem;
+	}
+	footer img:nth-child(5){
+		width: 0.26rem;
+		height: 0.25rem;
+	}
+	/*分类*/
+	header #area{
+		position: absolute;
+		right:0;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		height: 4.6rem;
+		display: flex;
+		display: none;
+	}
+	header #area .left{
+		width: 0.4rem;
+		background: rgba(0, 0 ,0 ,0.5) url(images/icos.png) no-repeat center center;
+
+	}
+	header #area .right{
+		flex: 1;
+		background: #333;
+		color: #aaaaaa;
+		font-size: 0.13rem;
+	}
+
+	header .right  .title{
+		margin-left: 0.1rem;
+		display: flex;
+		height: 0.51rem;
+		border-bottom: 0.01rem solid #404040;
+		width: 2.6rem;
+		line-height: 0.51rem;
+	}
+	header .title span:nth-child(1){
+		display: block;
+		width: 1.3rem;
+	}
+	header .title span:nth-child(2){
+		flex: 1;
+	}
+	header .right  .on {
+		color: #fff;
+		border-bottom: 0.04rem solid #fff;
+
+	}
+	header .right-class-child {
+		margin-left: 0.3rem;
+		margin-top: 0.2rem;
+		-display: none;
+	}
+	header .right-class-child span {
+		float: left;
+		width: 1.25rem;
+		height: 0.35rem;
+		text-align: left;
+	}
+	header .right-area-child{
+		margin-left: 0.3rem;
+		margin-top: 0.2rem;
+		display: none;
+	}
+	header .right-area-child span{
+		float: left;
+		width: 1.2rem;
+		height: 0.35rem;
+		text-align: left;
+	}
+	</style>
+	<script type="text/javascript">
+		;(function (win,doc){
+			function change(){
+				doc.documentElement.style.fontSize=100*doc.documentElement.clientWidth/320+'px';
+			}
+			change();
+			win.addEventListener('resize',change,false);
+		})(window,document);
+	</script>
+</head>
+<body>
+	<header>
+		<div><img src="images/back.png" class="back"></div>
+		<div><img src="images/logo.png" class="logo"></div>
+		<div class="header-3"><img src="images/class.png" class="class">
+			<div id="area">
+				<div class="left"></div>
+				<div class="right">
+					<div class="title"><span class="on">分类</span><span >地区</span></div>
+					<div class="right-class-child clearFix">
+						<span>全部</span>
+						<span>摄影</span>
+						<span>美食</span>
+						<span>培训</span>
+						<span>休闲</span>
+						<span>旅游</span>
+						<span>电影</span>
+						<span>酒店</span>
+						<span>生活服务</span>
+						<span>粮油生鲜</span>
+						<span>丽人</span>
+						<span>汽车服务</span>
+						<span>卡劵</span>
+						<span>通讯</span>
+						<span>房产汽车</span>
+					</div>
+					<div class="right-area-child clearFix" >
+						<span>杭州</span>
+						<span>切换城市&nbsp;></span>
+						<span>全部</span>
+						<span>建德市</span>
+						<span>上城区</span>
+						<span>富阳市</span>
+						<span>下城区</span>
+						<span>临安市</span>
+						<span>江干区</span>
+						<span>桐庐县</span>
+						<span>拱墅区</span>
+						<span>淳安县</span>
+						<span>西湖区</span>
+						<span>其它区</span>
+						<span>滨江区</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<nav>
+		<ul class="clearFix">
+			<li>商品</li>
+			<li>生活</li>
+			<li>品牌</li>
+			<li>聚宝盆</li>
+		</ul>
+	</nav>
+	<section>
+		<div class="s1">
+			<a href="javascript:;">
+				<div><img src="images/shop1.png" alt="" /></div>
+				<div class="detail">
+					<p><span class="sp">1.2折</span><span>新田园，林下散养草鸡蛋 40枚 纯天然污</span></p>
+					<p><span class="sp">¥</span><b class="sp">51</b><span class="sp">.00</span><span class="old">¥96.00</span></p>
+					<p>1240人已购买</p>
+					<p>预下单</p>
+				</div>
+			</a>
+		</div>
+		<div class="s1">
+			<a href="javascript:;">
+				<div><img src="images/shop1.png" alt="" /></div>
+				<div class="detail">
+					<p><span class="sp">1.2折</span><span>新田园，林下散养草鸡蛋 40枚 纯天然污</span></p>
+					<p><span class="sp">¥</span><b class="sp">51</b><span class="sp">.00</span><span class="old">¥96.00</span></p>
+					<p>1240人已购买</p>
+					<p>预下单</p>
+				</div>
+			</a>
+		</div>
+		<div class="s1 s2">
+			<a href="javascript:;">
+				<div><img src="images/shop1.png" alt="" /></div>
+				<div class="detail">
+					<p><span class="sp">1.2折</span><span>新田园，林下散养草鸡蛋 40枚 纯天然污</span></p>
+					<p><span class="sp">¥</span><b class="sp">51</b><span class="sp">.00</span><span class="old">¥96.00</span></p>
+					<p>1240人已购买</p>
+					<p>预下单</p>
+				</div>
+			</a>
+		</div>
+		<div class="s1 ">
+			<a href="javascript">
+				<div><img src="images/shop1.png" alt="" /></div>
+				<div class="detail">
+					<p><span class="sp">1.2折</span><span>新田园，林下散养草鸡蛋 40枚 纯天然污</span></p>
+					<p><span class="sp">¥</span><b class="sp">51</b><span class="sp">.00</span><span class="old">¥96.00</span></p>
+					<p>1240人已购买</p>
+					<p>预下单</p>
+				</div>
+			</a>
+		</div>
+	</section>
+	<footer>
+		<div>
+			<img src="images/prev.png" alt="">
+			<img src="images/next.png" alt="">
+			<img src="images/a.png" alt="">
+			<img src="images/book.png" alt="">
+			<img src="images/a2.png" alt="">
+		</div>
+	</footer>
+
+</body>
+</html>

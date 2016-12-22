@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>飞出的小方块</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	img{
+		vertical-align: top;
+	}
+	body{
+		overflow: hidden;
+		background: #2E2E2E;
+	}
+	.box{
+		width: 700px;
+		height:400px;
+		margin:100px auto;
+		position: relative;
+		background:url(images/0.jpg) no-repeat;
+		background-size: contain;
+		perspective:800px;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+	}
+	.box span{
+		position: absolute;
+		left: 0;
+		top: 0;
+		background:url(images/0.jpg) no-repeat;
+	}
+
+	input{
+		position: absolute;
+		z-index: 100;
+		width: 75px;
+		height: 25px;
+		background:#2E2E2E;
+		border:1px solid #fff;
+		-webkit-box-shadow:0 0 1px 1px #fff;
+		color: #fff;
+		left:10px;
+		top: 10px;
+	}
+</style>
+<script>
+	function ran(n,m){
+		return Math.floor(Math.random()*(m-n)+n)
+	}
+	document.addEventListener('DOMContentLoaded',function(){
+		var oBox = document.querySelector('.box');
+		var oBtn = document.querySelector('#btn')
+
+		var R = 4;
+		var C = 7;
+
+	//切换 方式
+	var n = 0
+	oBtn.onclick = function(){
+		if (n == 0) {
+			n = 400
+			oBtn.style.background = '#465256';
+		}else{
+			n = 0;
+			oBtn.style.background = '#2E2E2E'
+		};
+	}
+	// 布局 根据 R C 变换
+	for (var i = 0; i < R; i++) {
+		for (var j = 0; j < C; j++) {
+			var oS = document.createElement('span');
+			oS.style.width = oBox.offsetWidth/C+'px';
+			oS.style.height = oBox.offsetHeight/R+'px';
+			oS.style.left = j*oBox.offsetWidth/C+'px';
+			oS.style.top = i*oBox.offsetHeight/R+'px';
+			oS.style.backgroundPosition = '-'+j*oBox.offsetWidth/C+'px -'+i*oBox.offsetHeight/R+'px';
+			oBox.appendChild(oS);
+		}
+	}
+	//切换
+	var iNow  = 0;
+	var bOk = false;
+
+	var aSpan = oBox.children;
+	oBox.onclick = function(){
+		if (bOk)return;
+		bOk = true;
+		iNow++;
+
+		oBox.style.backgroundImage='url(images/'+iNow%4+'.jpg)';
+
+		for (var i = 0; i < aSpan.length; i++) {
+			//x y 正负 决定飞的方向
+			var x = aSpan[i].offsetLeft+aSpan[i].offsetWidth/2-oBox.offsetWidth/2;
+			var y = aSpan[i].offsetTop+aSpan[i].offsetHeight/2-oBox.offsetHeight/2;
+			aSpan[i].style.transform = 'translateZ(400px) translate('+x+'px,'+y+'px) rotateX('+ran(0,361)+'deg) rotateY('+ran(0,361)+'deg)';
+			aSpan[i].style.transition = '1s all ease';
+			aSpan[i].style.opacity = 0;
+		}
+		//最后一个span 运动结束 解除
+		aSpan[aSpan.length-1].addEventListener('transitionend',function(){
+			for (var i = 0; i < aSpan.length; i++) {
+				aSpan[i].style.transition = 'none';
+				aSpan[i].style.transform = 'translateZ('+n+'px) translate(0px,0px) rotateX(0deg) rotateY(0deg)';
+				aSpan[i].style.opacity = 1;
+				aSpan[i].style.backgroundImage = 'url(images/'+iNow%4+'.jpg)'
+			}
+			bOk = false;
+		},false)
+	};
+},false)
+</script>
+</head>
+<body>
+	<div class="box"></div>
+	<input type="button" name="" value="big/small" id="btn">
+<!--=======================================
+	‖	←	◆		◆	← ◆◇◇◇◆  ←   ‖
+	‖	    ◇◇	◇		  ◇		  ‖
+	‖		◇	◇	◇	2016  ◇	      ‖   
+	‖		◇	  ◇◇		  ◇		  ‖	
+	‖	→	◆	    ◆	→	  ◆      →	  ‖
+	======================================= -->
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+	}
+	img{
+		vertical-align: top;
+	}
+	body{
+		background: #2e2e2e;
+	}
+	#box{
+		width: 700px ;
+		height:400px;
+		margin: 100px auto;
+		position: relative;
+		overflow: hidden;
+	}
+	#box1{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	#box ul li{
+		position: absolute;
+		left: 700px;
+		top:0 ;
+
+		-webkit-mask:url(images/layer3.png) no-repeat;
+		-webkit-mask-size:100%;
+		-webkit-transition: 1.5s all ease;
+		-moz-transition: 1.5s all ease;
+		-ms-transition: 1.5s all ease;
+		-o-transition: 1.5s all ease;
+		transition: 1.5s all ease;
+	}
+	#box ul li img{
+		width: 100%;
+		height: 100%;
+	}
+	#prev,#next{ 
+		width: 70px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		opacity: 0.8;
+		-webkit-transition: 1s all ease;
+		-moz-transition: 1s all ease;
+		-ms-transition: 1s all ease;
+		-o-transition: 1s all ease;
+		transition: 1s all ease;
+		cursor: pointer;
+		z-index: 100;
+	}
+	#prev {			
+		left: 0;
+		background: url(images/prev.png) no-repeat center center;			
+	}
+	#next {
+		right: 0;
+		background: url(images/next.png) no-repeat  center;
+	}
+	#prev:hover{
+		background: url(images/prev_txt.png) no-repeat center center;
+
+	}
+	#next:hover{
+		background: url(images/next_txt.png) no-repeat center center;	
+	}
+	#box ol{
+		position:absolute; 
+		left:50%; bottom:10px; 
+		overflow:hidden;
+		margin-left:-55px; 
+	}
+	#box ol li{ 
+		width:20px; 
+		height:20px;
+		background:#3e4152; 
+		border-radius:50%; 
+		float:left; 
+		margin-right:10px;
+	}
+	#box ol li.on{ 
+		background:#ccc;
+	}
+	input{
+		position: absolute;
+		z-index: 100;
+		right: 25px;
+		top: 10px;
+	}
+	.infor{
+		position: absolute;
+		z-index: 100;
+		right: 10px;
+		top: 30px;
+		font-size: 14px;
+		color: #fff;
+		font-weight: bold;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//初始第一个运动当当前
+		$('#box1 ul li').eq(0).css({
+			left:0,
+			transform:' rotateY(180deg) scale(-1,1)'
+		});
+
+		var iNow = 0;
+		var aLi = $('#box1 ul li')
+		var bReady = false;
+		$('#next').click(function(){
+			if (bReady)return;
+			bReady = true;
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].removeAttribute('style');//清除所有
+			}
+			//当前iNow移出 旋转
+			aLi[iNow].style.left = '-700px';
+			aLi[iNow].style.transform = ' rotateY(180deg) scale(-1,1)';
+
+			iNow++;
+			if (iNow == $('#box1 ul li').length) {
+				iNow = 0;
+			}
+			// 下一个运动到当前 正常
+			$('#box1 ul li').eq(iNow).css('left',700).animate({
+				left:0
+			});
+			tab();
+
+			var timer = setTimeout(function(){
+				bReady = !bReady;
+				clearTimeout(timer)
+			},1000)//防止多次点击
+		});
+
+		$('#prev').click(function(){
+			if (bReady)return;
+			bReady = true;
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].removeAttribute('style');
+			}
+			aLi[iNow].style.left = '-700px';
+			aLi[iNow].style.transform = 'translate3d(0,0,0) rotateY(180deg) scale(-1,1)';
+			iNow--;
+			if (iNow == -1) {
+				iNow = $('#box1 ul li').length-1;
+			};
+			$('#box1 ul li ').eq(iNow).css('left',-700).animate({
+				left:0
+			});
+			tab();
+			
+			var timer = setTimeout(function(){
+				bReady = !bReady;
+				clearTimeout(timer)
+			},1000)//防止多次点击
+		});
+
+		$('#box1 ol li ').click(function(){
+			if (bReady)return;
+			bReady = true;
+			if (!$('#box ul li ').eq(iNow).is(':animated')) {
+				if (iNow >= $(this).index()) {//判断运动方向
+					$('#box1 ul li ').eq(iNow).animate({
+						left:700
+					});
+					$('#box1 ul li ').eq($(this).index()).css('left',-700).animate({
+						left:0
+					});
+				}else{
+					$('ul li').eq(iNow).animate({
+						left:-700
+					});
+					$('#box1 ul li' ).eq($(this).index()).css('left',700).animate({
+						left:0
+					});
+				}
+			}
+			iNow = $(this).index();
+			tab();
+
+			var timer = setTimeout(function(){
+				bReady = !bReady;
+				clearTimeout(timer)
+			},1000)//防止多次点击
+		});
+		function tab(){
+			$('#box1 ol li').removeClass('on');
+			$('#box1 ol li').eq(iNow).addClass('on');
+		}
+	});
+</script>
+</head>
+<body>
+	<div id="box">
+		<div id="box1">
+			<div id="prev"></div>
+			<div id="next"></div>
+			<ul>
+				<li><img src="images/banner1.jpg"></li>
+				<li><img src="images/banner2.jpg"></li>
+				<li><img src="images/banner3.jpg"></li>
+				<li><img src="images/banner4.jpg"></li>
+			</ul>
+			<ol>
+				<li class="on"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ol>
+			<div class="infor">jQuery 应用</div>
+		</div>
+	</div>
+<!--=======================================
+	‖	←	◆		◆	← ◆◇◇◇◆  ←   ‖
+	‖	    ◇◇	◇		  ◇		  ‖
+	‖		◇	◇	◇	2016  ◇	      ‖   
+	‖		◇	  ◇◇		  ◇		  ‖	
+	‖	→	◆	    ◆	→	  ◆      →	  ‖
+	======================================= -->
+</body>
+</html>

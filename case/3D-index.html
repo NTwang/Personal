@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D旋转</title>
+<style type="text/css">
+	*{
+		margin: 0;
+		padding:0;
+		list-style: none;
+	}
+	body{
+		overflow: hidden;
+	}
+	img{
+		vertical-align: top;
+	}
+	.clearFix:after{content:"";display:block;clear:both;}
+	body{
+		max-width: 1366;
+		
+		background: url(images/bg-1.jpg)  fixed ;
+		background-size: cover;
+	}
+	/* */
+	.scene{
+		width: 260px;
+		height: 400px;
+		margin: 30px;
+		-webkit-perspective: 1200px;
+		-moz-perspective:1200px;
+		perspective: 1200px;
+	}
+	.demo{
+		margin:100px 100px;
+		display: flex;
+	}
+	.demo li{
+		flex: 1;
+	}
+	.move{
+		width: 260px;
+		height: 400px;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+
+		-webkit-transform: translateZ(130px);
+		-moz-transform: translateZ(130px);
+		-ms-transform: translateZ(130px);
+		-o-transform: translateZ(130px);
+		transform: translateZ(130px);
+		
+		-webkit-transition: 1s all ease;
+		-moz-transition: 1s all ease;
+		-ms-transition: 1s all ease;
+		-o-transition: 1s all ease;
+		transition: 1s all ease;
+		
+	}
+
+	.move:hover{
+		-webkit-transform: rotateY(-78deg) translateZ(20px);
+		-moz-transform: rotateY(-78deg) translateZ(20px);
+		-ms-transform: rotateY(-78deg) translateZ(20px);
+		-o-transform: rotateY(-78deg) translateZ(20px);
+		transform: rotateY(-78deg) translateZ(20px);	
+	}
+	/*前后两个子页*/
+	.move .poster, .move .poster{
+		position: absolute;
+		width: 260px;
+		height: 400px;
+	}
+	.move .poster{
+		-webkit-transform: translateZ(130px);
+		-moz-transform: translateZ(130px);
+		-ms-transform: translateZ(130px);
+		-o-transform: translateZ(130px);
+		transform: translateZ(130px);
+
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	.move .info{
+		-webkit-transform: rotateY(90deg) translateZ(130px);
+		-moz-transform: rotateY(90deg) translateZ(130px);
+		-ms-transform: rotateY(90deg) translateZ(130px);
+		-o-transform: rotateY(90deg) translateZ(130px);
+		transform: rotateY(90deg) translateZ(130px);
+	}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<ul class="demo clearFix">
+			<li class="scene">
+				<div class="move">
+					<div class="poster">
+						<img src="images/Harry-Potter1.jpg" alt="" />
+					</div>
+					<div class="info">
+						<img src="images/Harry-Potter2.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li class="scene">
+				<div class="move">
+					<div class="poster">
+						<img src="images/Harry-Potter3.jpg" alt="" />
+					</div>
+					<div class="info">
+						<img src="images/Harry-Potter4.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+			<li class="scene">
+				<div class="move">
+					<div class="poster">
+						<img src="images/Harry-Potter5.jpg" alt="" />
+					</div>
+					<div class="info">
+						<img src="images/Harry-Potter6.jpg" alt="" />
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+<!--=======================================
+	‖	←	◆		◆	← ◆◇◇◇◆  ←   ‖
+	‖	    ◇◇	◇		  ◇		  ‖
+	‖		◇	◇	◇	2016  ◇	      ‖   
+	‖		◇	  ◇◇		  ◇		  ‖	
+	‖	→	◆	    ◆	→	  ◆      →	  ‖
+	======================================= -->
+</body>
+</html>

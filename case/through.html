@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>through</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background: #2e2e2e;
+		overflow: hidden;
+	}
+	#box{
+		width: 640px;
+		margin: 50px auto;
+		height: 480px;
+	}
+	#box .demo{
+		width: 150px;
+		height:150px;
+		float: left;
+		margin: 5px;
+		position: relative;
+		overflow: hidden;
+	}
+	#box .demo-move{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: -150px;
+		top:0;
+	}
+	input{
+		width: 70px;
+		height: 25px;
+		position: absolute;
+		top: 10px;
+		background:#2e2e2e;
+		color: #fff;
+		border:1px solid #fff;
+		-webkit-box-shadow:0 0 1px 1px #fff;
+		outline: none;
+		cursor: pointer;
+		cursor: hand;
+	}
+	.change{
+		left: 10px;
+	}
+	.change2{
+		left: 85px;
+	}
+	.change3{
+		left: 160px;
+	}
+</style>
+<script type="text/javascript" src="js/doMove.js"></script>
+<script>
+;function getDir(obj,ev){
+	var x = obj.getBoundingClientRect().left+obj.offsetWidth/2-ev.clientX;
+	var y = obj.getBoundingClientRect().top+obj.offsetHeight/2-ev.clientY;
+	return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+}
+function through(obj){
+	var obj2 = obj.children[0];
+	var W = obj2.offsetWidth;
+	var H = obj.offsetHeight;
+	var fx = Tween.Quart.easeOut;
+	obj.onmouseenter = function(ev){
+		var oEvent = ev || event;
+		var dir = getDir(this,oEvent);
+		//判断四个方向
+		switch(dir){
+			case 0:
+			obj2.style.left = W+'px';
+			obj2.style.top = 0+'px';
+			break;
+			case 1:
+			obj2.style.left = 0+'px';
+			obj2.style.top = H+'px';
+			break;
+			case 2:
+			obj2.style.left = -W+'px';
+			obj2.style.top = 0+'px';
+			break;
+			case 3:
+			obj2.style.left = 0+'px';
+			obj2.style.top = -H+'px';
+			break;
+		}
+		move(obj2,{'left':0,'top':0},{easing:fx})
+	}
+	//鼠标划过的位置
+	obj.onmouseleave = function(ev){
+		var oEvent = ev || event;
+		var dir = getDir(this,oEvent);
+
+		switch(dir){
+			case 0:
+			move(obj2,{left:W,top:0})
+			break;
+			case 1:
+			move(obj2,{left:0,top:H})
+			break;
+			case 2:
+			move(obj2,{left:-W,top:0})
+			break;
+			case 3:
+			move(obj2,{left:0,top:-H})
+			break;
+		}
+	}
+};
+function getStyle(obj,name){
+	return obj.currentStyle || getComputedStyle(obj,false)[name];
+};
+function ran (n,m){
+	return Math.floor(Math.random()*(m-n)+n);
+};
+document.addEventListener('DOMContentLoaded',function(){
+	var oBox = document.getElementById('box');
+	var aDemo = oBox.children;
+	var aDemo2 = document.getElementsByClassName('demo-move');
+	var aBtn = document.getElementsByTagName('input');
+
+	for (var i = 0; i < aDemo2.length; i++) {
+		aDemo2[i].style.background = 'url(images/bg-2/'+(i+1)+'.jpg)'
+	};
+	var arr = [];
+		//获取位置
+		for (var i = 0; i <aDemo.length; i++) {
+			arr[i] = {left:aDemo[i].offsetLeft,top:aDemo[i].offsetTop};
+		};
+		for (var i = 0; i < aDemo.length; i++) {
+			aDemo[i].style.position = 'absolute';
+			aDemo[i].style.top = arr[i].top+'px';
+			aDemo[i].style.left = arr[i].left+'px';
+			aDemo[i].style.margin = 0;
+			aDemo[i].style.backgroundImage = 'url("images/bg1.jpg")';
+			aDemo[i].style.backgroundPosition = '-'+arr[i].left+'px -'+arr[i].top+'px';
+
+			through(aDemo[i])
+		};
+
+		//点击 换内容
+		var fx = Tween.Sine.easeOut;// 取消回弹效果
+		var W = document.documentElement.clientWidth;
+		var H = document.documentElement.clientHeight;
+		//消失的终点
+		var l = W/2-aDemo[0];
+		var t = H/2-aDemo[0];
+		//形式1
+		aBtn[0].onclick = function(){
+			var n = ran(1,4);//图片随机
+			if (parseInt(getStyle(aDemo[0],'width')) == 150) {
+				for (var i = 0; i < aDemo.length; i++) {
+					move(aDemo[i],{left:l,top:t,width:0,height:0},{easing:fx,duration:1000})
+				};
+			}else{
+				for (var i = 0; i < aDemo.length; i++) {
+					aDemo[i].style.backgroundImage = 'url("images/bg'+n+'.jpg")';
+					move(aDemo[i],{left:l,top:t,width:150,height:150},{easing:fx,duration:1000})
+				}
+			}
+		};
+		//形式2
+		aBtn[1].onclick = function(){
+			var n = ran(1,4);
+			for (var i = 0; i < aDemo.length; i++) {
+				aDemo[i].style.transition = '1s all ease '+i/6+'s';
+				aDemo[i].style.backgroundImage = 'url("images/bg'+n+'.jpg")';
+				aDemo[i].style.transform = 'perspective(800px) rotateY(180deg) scale(-1,1)'
+			};
+			//解除事件
+			aDemo[aDemo.length-1].addEventListener('transitionend',function(){
+				for (var i = 0; i < aDemo.length; i++) {
+					aDemo[i].style.transition = 'none';
+					aDemo[i].style.transform = 'perspective(800px) rotateY(0) scale(1,1)'
+				}
+			})
+		};
+		//形式3
+		aBtn[2].onclick = function(){
+			var n = ran(2,5);
+			for (var i = 0; i < aDemo.length; i++) {
+				//判断 分行运动
+				if (i < 4) {
+					aDemo[i].style.transition = '1s all ease 0.5s';					
+				};
+				if (i >=4 && i < 8) {
+					aDemo[i].style.transition = '1s all ease 1s';
+				};
+				if (i >= 8) {
+					aDemo[i].style.transition = '1s all ease 1.5s';
+				};
+				aDemo[i].style.backgroundImage = 'url("images/bg'+(n-1)+'.jpg")';
+				aDemo[i].style.transformStyle = 'preserve-3d';
+				aDemo[i].style.transform = 'perspective(800px) rotateX(180deg) scale(1,-1)'
+			};
+
+			aDemo[aDemo.length-1].addEventListener('transitionend',function(){
+				for (var i = 0; i < aDemo.length; i++) {
+					aDemo[i].style.transition = 'none';
+					aDemo[i].style.transform = 'perspective(800px) rotateY(0) scale(1,1)'
+				}
+			})
+		};
+},false)
+</script>
+</head>
+<body >
+	<div id="box">
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>	
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>
+		<div class="demo"><div class="demo-move"></div></div>	
+	</div>
+	<input type="button" name="" value="change" class="change">
+	<input type="button" name="" value="change2" class="change2">
+	<input type="button" name="" value="change3" class="change3">
+</body>
+</html>

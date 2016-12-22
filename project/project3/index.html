@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>【美团】</title>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	<script type="text/javascript">
+		window.onload=function(){
+			 var oDiv=document.getElementById('smalltitle');
+        var oDiv1=oDiv.getElementsByTagName('div');
+        var oAbc=document.getElementById('content');
+        var oDiv2=oAbc.getElementsByTagName('div');
+
+
+        for(var i=0; i<oDiv1.length; i++){
+            oDiv1[i].index=i;
+            oDiv1[i].onmouseover=function(){
+                for(var j=0; j<oDiv1.length;j++){
+                    oDiv1[j].className='';
+                    oDiv2[j].className='';
+                }
+                this.className='on2';
+               oDiv2[this.index].className='show';
+            }
+        }
+        var oS1=document.getElementById('select1');
+        var oS2=document.getElementById('select');
+         oS1.onmouseover=function(){
+          oS2.className='select'
+          oS1.className='bg4'
+         }
+           oS1.onmouseout=function(){
+          oS2.className='show5'
+          oS1.className=''
+         }
+
+		}
+	</script>
+</head>
+<body> 
+      <div class="bigbg">
+      <header class="mt-header clearFix">
+<!--header-top-->
+            <div class="hd-top">
+	      	    <div class="wraper clearFix">
+	      	    	<ul class="fl hd-left ">
+	      	    		<li class="collection">
+	      	    			<a href="#">收藏美团</a>
+	      	    		</li>
+	      	    		<li>
+	      	    			<a href="login.html" class="sign-in">登录</a>
+	      	    			<a href="regsiter.html" class="register">注册</a>
+	      	    		</li>
+	      	    		<li class="ph-mt">
+	      	    			<a href="#">手机美团</a>
+	      	    		</li>
+	      	    	</ul>
+	      	    	<ul class="fr hd-right">
+	      	    		<li id="select1">
+	      	    			<a href="#" class="sp1">我的订单</a>
+                    <div id="select" class="select show5">
+                      <div>
+                        <a href="javascript:;">农夫山泉</a>
+                      </div>
+                      <div>
+                        <a href="javascript:;">农夫山泉</a>
+                      </div>
+                      <div>
+                        <a href="javascript:;">农夫山泉</a>
+                      </div>
+                    </div>
+	      	    		</li>
+	      	    		<li>
+	      	    			<a href="#">我的美团</a>
+	      	    				      	    		</li>
+	      	    		<li>
+	      	    			<a href="#">最近浏览</a>
+	      	    		</li>
+	      	    		<li>
+	      	    			<a href="#" class="shopcar">购物车<span>0</span>件</a>
+	      	    		</li>
+	      	    		<li>
+	      	    			<a href="#">练习客服</a>
+	      	    		</li>
+	      	    		<li>
+	      	    			<a href="#">我是商家</a>
+	      	    		</li>
+	      	    		<li>
+	      	    			<a href="#" class="sp1">更多</a>
+	      	    		</li>
+	       	    	</ul>
+	      	    </div>
+      	    </div>
+<!--header-logo-->
+      	    <div class="mt-logo wraper clearFix">
+      	    	<div class="clearFix mt fl">
+      	    		<h1 class="fl">美团</h1>
+      	    		<div class="fl">
+	      	    		<h3>北京</h3>
+	      	    		<p><a href="#">切换城市</a></p>
+      	    		</div>
+      	    	</div>
+      	    	<div class="fl search">
+      	    	    <div class="fl">
+      	    	    	团购
+      	    	    </div>
+      	    		<input class="please" type="text" name="" value="请输入商品名称、地址等"><input type="button" name="" value="搜索" class="btn">
+        	    </div>
+      	    	<div class="fr right">
+      	    			<a href="#" class="r1">临时退</a>
+      	    			<a href="#" class="r2">不满意免单</a>
+ 	    			    <a href="#" class="r3">过期退</a>
+      	    		</div>
+      	    	     <p class="hot fl"><a href="#">蛋糕</a><a href="#">羊蝎子</a><a href="#">海鲜自助</a><a href="#">虾吃虾涮</a><a href="#">比格</a><a href="#">烤肉</a><a href="#">金百万</a><a href="#">正一味</a><a href="#">东来顺</a>
+      	    	     </p>
+      	    	</div>
+      	
+<!--headernav-->
+            <div class="hd-nav wraper">
+            	<div id="allclass" class="clearFix">
+              <div id="classide">
+            		<h4 id="h4">全部分类</h4>
+            			<ul class="nav fl">
+            				<li>
+            					<a href="#">首页</a>
+            				</li>
+            				<li>
+            					<a href="#">今日新单</a>
+            				</li>
+            				<li>
+            					<a href="#">购物</a>
+            				</li>
+            				<li>
+            					<a href="#">身边外卖</a>
+            				</li>
+            			</ul>
+            		<div id="sidebar">
+                    <div class="bg"></div>
+            			<ul>
+            				<li>
+            					<a href="#">很多</a>
+            				</li>
+            				<li>
+            					<a href="#">很多</a>
+            				</li>
+            			</ul>
+            		</div>
+                </div>
+            	</div>
+            	<div>
+            	<div class="smallnav">
+            		<a href="#">北京团购 >> </a><a href="#">美食团购 >> </a><a href="#">自助餐 >> </a><a href="#">海淀区</a>
+            	</div>
+            	<div class="business clearFix">
+            		<div class="left fl">
+            			<h2 class="fl">好伦哥（永定路店）</h2><a href="#" class="fl">查看其他分店</a>
+            			<p class="p1">海淀区复兴路甲36好百朗园东北角</p>
+            			<p>010-8888888</p>
+            		</div>
+            		<div class="center fl">
+            			<p class="sp2">3.6分</p>
+            			<p>自助餐</p>
+            			<p>信息报错</p>
+            		</div>
+            		<div class="right fl">
+            			<p>消费人数 <span>71257</span></p>
+            			<p>评价人数 <span class="sp3">8205</span></p>
+            			<p class="sp4">商家资质 &nbsp;&nbsp;&nbsp;&nbsp;营业执照</p>
+            		</div>
+            	</div>
+            	<div class="group clearFix">
+            	      <h2>正常团购</h2>
+            		<div>
+ 						<a href="#" class="fl">
+            				<img src="images/hd1.jpg" alt=" "/>
+            			</a>
+            			<div class="fl group1">
+	            			<p>永定路店单人自助餐一人次</p>
+	            			<p class="sp6">团</p>
+							<p>已售99999</p>
+						</div>
+            		</div>
+            		<div class="fl group2">
+            			<p>截止到xxxxxxxxx</p>
+            			<p>xxxxxxxxx</p>
+            		</div>
+            		<div class="fl group3">
+            			<p>￥<b>55</b></p>
+            			<p class="price">门店价<span>$100</span></p>
+            		</div>
+            		<div class="buy">
+            			<a href="#">立即抢购</a>
+            		</div>
+            	</div>
+               	
+            </div>
+            </div>
+<!--header special-->
+              <div class="wraper">
+                 <div class="fl sp-left">
+              	  <div class="clearFix hd-special">
+              	  	<h2>特色菜</h2>
+              	  	<ul class="fl hd-s1">
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  	</ul>
+              	  	<ul class="fl hd-s2">
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  	</ul>
+              	  	<ul class="fl hd-s3">
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">鸡翅膀</a>
+              	  		</li>
+              	  		<li class="more">
+              	  			<a href="#">更多》</a>
+              	  		</li>
+              	  	</ul>
+              	  </div>
+              	  	<ul class="clearFix hd-sp-dw">
+              	  		<li>
+              	  			<a href="#">
+              	  				<img src="images/hd2.jpg" alt="" />
+              	  				<p>烧鸡翅</p>
+              	  			</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">
+              	  				<img src="images/hd3.jpg" alt="" />
+              	  				<p>烧鸡翅</p>
+              	  			</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">
+              	  				<img src="images/hd2.jpg" alt="" />
+              	  				<p>烧鸡翅</p>
+              	  			</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">
+              	  				<img src="images/hd2.jpg" alt="" />
+              	  				<p>烧鸡翅</p>
+              	  			</a>
+              	  		</li>
+              	  		<li>
+              	  			<a href="#">
+              	  				<img src="images/hd3.jpg" alt="" />
+              	  				<p>烧鸡翅</p>
+              	  			</a>
+              	  		</li>
+              	  	</ul>
+              
+<!--header details-->
+              <div class="clearFix details"> 
+                   <h2>商家详情</h2>
+ 					<div class="fl allpicture clearFix">
+ 						<a href="#">
+ 							<img src="images/hd6.jpg" alt="" />
+ 							<p>查看全部 386 张图片</p>
+ 						</a>
+ 					</div>
+ 					<div class="fl time"> 
+ 						<p>营业时间：10：30-22：00</p>
+ 						<p>门店服务：支持WIFI 免费停车</p>
+ 						<p class=" clearFix"><div class="fl">门店介绍：</div>
+<div class="fl" style="width:340px;">闻名遐迩、享誉世界的“狗不理”是中国百年金牌老字号，是中华饮食文化的典范之作。狗不理和平里（北京）大酒楼和9号大酒楼（狗不理上院旗舰店）是“狗不理”在京开设的两家直营直<b class="fl">大酒楼坐落于北京朝阳区和平</b><a href="#" class="fl">展开</a></div></p>
+ 					</div>
+        </div> 
+        </div> 
+<!--right-->
+             <div class="fr box-right">
+                  <div id="smalltitle" class="clearFix">
+                      <div class="on2">附近同类团购</div>
+                      <div>附近同类商家</div>
+                  </div>
+                  <div id="content">
+                       <div class="show" id="">
+                        <ul>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd5.jpg" class="fl">
+                                
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                               
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd5.jpg" class="fl">
+                                
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                               
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd5.jpg" class="fl">
+                             
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                                 
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd5.jpg" class="fl">
+                                  
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                                   
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd5.jpg" class="fl">
+                                 
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                                  
+                                </a>
+                          </li>
+                        </ul>
+                       </div>
+                       <div>
+                        <ul>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd4.jpg" class="fl">
+                                 
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                                    
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd4.jpg" class="fl">
+                                  
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                                  
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd4.jpg" class="fl">
+                                   
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                                   
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd4.jpg" class="fl">
+                                
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                               
+                                </a>
+                          </li>
+                          <li>
+                              <a href="#" class="clearFix">
+                                  <img src="images/hd4.jpg" class="fl">
+                                 
+                                      <p class="p1">冰淇淋</p>
+                                      <p class="p2"><span>￥9.9</span> 44444人以团购</p>
+                                   
+                                </a>
+                          </li>
+                        </ul>
+                       </div>
+                       <div></div>
+                    
+                  </div>
+               
+              </div>
+                
+                      
+          </div> 
+      </header>
+<!--center-->
+<!--eva-->
+  <div class="eva wraper">
+      <h2>消费评价</h2>
+        <div class="eva-t clearFix">
+          <ul class="clearFix fl">
+              <li>
+                  <p><a href="#">全部</a></p>
+                </li>
+                <li><a href="#">晒图评价</a></li>
+            </ul>
+            
+            <select class="fr" name="sort">
+                <option value="默认排序">默认排序</option>
+                <option value="时间排序">时间排序</option>
+            </select>
+            
+        </div>
+        <div class="eva-c clearFix">
+          <div class="eva-cl fl">大家都在说:</div>
+            <ul class="fl clearFix">
+              <li><a href="#">味道很好(324)</a></li>
+                <li><a href="#">菜品种类齐全(252)</a></li>
+                <li><a href="#">服务态度很好(135)</a></li>
+                <li><a href="#">环境不错(120)</a></li>
+                <li><a href="#">菜品供应充足(33)</a></li>
+                <li><a href="#">原料品质不错(30)</a></li>
+                <li><a href="#">不用等位(20)</a></li>
+                <li class="black"><a href="#">菜品种类不全(158)</a></li>
+                <li class="black"><a href="#">味道一般(109)</a></li>
+                <li class="black"><a href="#">菜品供应不足(44)</a></li>
+                
+            </ul>
+        </div>
+        <ul class="eva-b">
+          <li class="clearFix">
+              <div class="l-l fl">
+                  <b></b>
+                    <p>红袖添香1228</p>
+                    <i></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i></i><i></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb"><span>[认真评价]</span>永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva4.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva5.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva6.jpg" width="15" height="100"alt="" />
+                        </a>
+                        <a href="#"><div class="more"><b>></b></div></a>
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                        
+                        
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+            <li class="clearFix">
+              <div class="l-l fl clearFix">
+                  <b class="fl"></b>
+                    <p class="fl">许先生86</p>
+                    <i class="fl ml4px"></i>
+                </div>
+                <div class="l-r fl">
+                  <p class="pt clearFix ">
+                      <i></i><i></i><i></i><i class="bad"></i><i class="bad"></i>
+                        <span class="fl date">2016-07-31</span>
+                    </p>
+                    <p class="pb">永远也无法吃通关的永定路好伦哥，尽管我吃了N多年了，但他们始终都随着客户需求和市场热门进行微调整。今天又添加了烤鸭，说心里话真是比烤鸭店的好吃，肉香烂，皮酥脆，香气扑鼻。三两个粉丝扇贝、一盘冰镇北极虾是每次来的标配、标配、标配。今天又爱上了类似华夫饼的甜品，酥脆层多，甜度适口，入口香甜，真是又好吃又美味又好看。榴莲披萨好吃的不要不要的。这儿老板和店长都非常友好亲民，尤其是卫生间永远都打扫的干净整洁。必须32个赞。</p>
+                    <div class="images clearFix">
+                      <a href="#">
+                          <img src="images/eva1.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva2.jpg" width="100" height="100"alt="" />
+                        </a>
+                        <a href="#">
+                          <img src="images/eva3.jpg" width="100" height="100"alt="" />
+                        </a>
+                    </div>
+                    <span>好伦哥永定路店单人自助餐</span>
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="pos clearFix wraper">
+          <a class="color" href="#">首页</a>
+            <a  class="color pre clearFix" href="#"><i class="fl"></i><span class="fl">上一页</span></a>
+            <a class="on" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a class="next clearFix" href="#"><span class="fl">下一页</span><b class="fl"></b></a>
+            <a href="#">尾页</a>
+    </div>
+<!--footer-->
+
+  <div class=" wraper clearFix">
+    <div class="two-line"></div>
+    <div class="footer-top">
+    <div class="footer-top-left fl clearFix"> 
+      <dl>
+        <dt>获取更新</dt>
+        <dd>邮箱订阅</dd>
+        <dd>iPhone/Android</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+      </dl>
+      <dl>
+        <dt>获取更新</dt>
+        <dd>邮箱订阅</dd>
+        <dd>iPhone/Android</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+      </dl>
+      <dl>
+        <dt>获取更新</dt>
+        <dd>邮箱订阅</dd>
+        <dd>iPhone/Android</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+      </dl>
+      <dl class="footer-top-left-last">
+        <dt>获取更新</dt>
+        <dd>邮箱订阅</dd>
+        <dd>iPhone/Android</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+        <dd>美团QQ空间</dd>
+        <dd>美团新浪微博</dd>
+      </dl>
+    </div>
+    <div class="footer-top-right fl">
+      <div class="footer-top-right-top">
+        <i></i>
+        <span>客服电话</span>
+        <p><b>10107888</b>(9:00-23:00)</p>
+      </div>
+      <div class="footer-top-right-bottom">
+        <p>退款、退换货、查看美团券</p>
+        <a href="#">参考教程，轻松搞定!</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer-bg">
+  <div class="footer">
+    <p>2016美团网团购 meituan.com 京ICP证070791号 | 京ICP备10211739号 | 电子公告服务规则</p>
+    <div class="footer-bottom">
+      <a href="#" class="clearFix">
+        <img class="fl" src="images/police.png" alt="" width="18" height="20" />
+        <p class="fl">京公网安备11010502025545号</p>
+      </a>
+    </div>
+  </div>
+  <div class="footer-maxbottom">
+    <img src="images/footer-banner.png" alt="" width="107" height="36" />
+    <img src="images/footer-banner.png" alt="" width="107" height="36" />
+    <img src="images/footer-banner.png" alt="" width="107" height="36" />
+  </div>
+  </div>
+  </div>
+  
+    <a href="#"><div class="fixed"> </div></a>
+ 
+
+</body>
+</html>
